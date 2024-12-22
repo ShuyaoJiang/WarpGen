@@ -1,0 +1,87 @@
+{
+  "code": "{\n     v = v + w;\n     u = v * x;\n     s = s + (D1+u*(D2+u*D3))/(w+u*(D1+u*(E2+u*E3)));\n   }",
+  "postContext": [
+    {
+      "locations": [
+        7,
+        11,
+        27
+      ],
+      "name": "v",
+      "type": "double"
+    },
+    {
+      "locations": [
+        23,
+        51,
+        57,
+        67,
+        73,
+        79
+      ],
+      "name": "u",
+      "type": "double"
+    },
+    {
+      "locations": [
+        39,
+        43
+      ],
+      "name": "s",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        15,
+        65
+      ],
+      "name": "w",
+      "type": "double"
+    },
+    {
+      "locations": [
+        31
+      ],
+      "name": "x",
+      "type": "double"
+    },
+    {
+      "locations": [
+        48,
+        70
+      ],
+      "name": "D1",
+      "type": "double"
+    },
+    {
+      "locations": [
+        54
+      ],
+      "name": "D2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        59
+      ],
+      "name": "D3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        76
+      ],
+      "name": "E2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        81
+      ],
+      "name": "E3",
+      "type": "double"
+    }
+  ]
+}

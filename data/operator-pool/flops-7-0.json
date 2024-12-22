@@ -1,0 +1,91 @@
+{
+  "code": "{\n\n#ifdef ROPT\n   register double s,u,v,w,x;\n#else\n   double s,u,v,w,x;\n#endif\n\n   long loops, NLimit;\n   register long i, m, n;\n\n   printf(\"\\n\");\n   printf(\"   FLOPS C Program (Double Precision), V2.0 18 Dec 1992\\n\\n\");\n\n\t\t\t/****************************/\n   loops = 15625;        /* Initial number of loops. */\n\t\t\t/*     DO NOT CHANGE!       */\n\t\t\t/****************************/\n\n/****************************************************/\n/* Set Variable Values.                             */\n/* T[1] references all timing results relative to   */\n/* one million loops.                               */\n/*                                                  */\n/* The program will execute from 31250 to 512000000 */\n/* loops based on a runtime of Module 1 of at least */\n/* TLimit = 15.0 seconds. That is, a runtime of 15  */\n/* seconds for Module 1 is used to determine the    */\n/* number of loops to execute.                      */\n/*                                                  */\n/* No more than NLimit = 512000000 loops are allowed*/\n/****************************************************/\n\n   TLimit = 1.0;\n   NLimit = 512000000;\n\n   piref = 3.14159265358979324;\n   one   = 1.0;\n   two   = 2.0;\n   three = 3.0;\n   four  = 4.0;\n   five  = 5.0;\n   scale = one;\n\n   printf(\"   Module     Error        RunTime      MFLOPS\\n\");\n   printf(\"                            (usec)\\n\");\n/*************************/\n/* Initialize the timer. */\n/*************************/\n#ifdef SMALL_PROBLEM_SIZE\n   m = loops*200;\n#else\n   m = loops*10000;\n#endif\n\n\n\n/*******************************************************/\n/* Module 7.  Calculate value of the definite integral */\n/*            from 0 to sa of 1/(x+1), x/(x*x+1), and  */\n/*            x*x/(x*x*x+1) using the Trapizoidal Rule.*/\n/*            There are 12 double precision operations */\n/*            per loop ( 3 +, 3 -, 3 *, and 3 / ) that */\n/*            are included in the timing.              */\n/*            25.0% +, 25.0% -, 25.0% *, and 25.0% /   */\n/*******************************************************/\n\n\t\t\t\t\t\t  /*********************/\n   s = 0.0;                                        /* Loop 8.           */\n   w = one;                                        /*********************/\n   sa = 102.3321513995275;\n   v = sa / (double)m;\n\n   for ( i = 1 ; i <= m-1 ; i++)\n   {\n   x = (double)i * v;\n   u = x * x;\n   s = s - w / ( x + w ) - x / ( u + w ) - u / ( x * u + w );\n   }\n\t\t\t\t\t\t  /*********************/\n\t\t\t\t\t\t  /* Module 7 Results  */\n\t\t\t\t\t\t  /*********************/\n   x  = sa;                                      \n   u  = x * x;\n   sa = -w - w / ( x + w ) - x / ( u + w ) - u / ( x * u + w );\n   sa = 18.0 * v * (sa + two * s );\n\n   m  = -2000 * (long)sa;\n   m = (long)( (double)m / scale );\n\n   sc = sa + 500.2;\n\t\t\t\t\t\t  /********************/\n\t\t\t\t\t\t  /*  DO NOT REMOVE   */\n\t\t\t\t\t\t  /*  THIS PRINTOUT!  */\n\t\t\t\t\t\t  /********************/\n   printf(\"     7   %13.4lf  %10.4lf  %10.4lf\\n\",\n          sc* /* stabilize output */  1e-30,\n          0* /* stabilize output */ 1e-30 ,\n          0* /* stabilize output */ 1e-30 );\n\n\n   return 0;\n}",
+  "postContext": [
+    {
+      "locations": [
+        769,
+        1100
+      ],
+      "name": "TLimit",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1141
+      ],
+      "name": "piref",
+      "type": "double"
+    },
+    {
+      "locations": [
+        549,
+        1173,
+        1261,
+        2182
+      ],
+      "name": "one",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1189,
+        2692
+      ],
+      "name": "two",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1205
+      ],
+      "name": "three",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1221
+      ],
+      "name": "four",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1237
+      ],
+      "name": "five",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1253,
+        2757
+      ],
+      "name": "scale",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1685,
+        2253,
+        2284,
+        2546,
+        2606,
+        2670,
+        2687,
+        2726,
+        2775
+      ],
+      "name": "sa",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2770,
+        2971
+      ],
+      "name": "sc",
+      "type": "double"
+    }
+  ],
+  "preContext": []
+}

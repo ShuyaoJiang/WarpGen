@@ -1,0 +1,76 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j;\n\n  for (i = 0; i < ni; i++)\n    for (j = 0; j < nk; j++)\n      A[i][j] = ((DATA_TYPE) i*j) / ni;\n  for (i = 0; i < nk; i++)\n    for (j = 0; j < nj; j++)\n      B[i][j] = ((DATA_TYPE) i*(j+1)) / nj;\n  for (i = 0; i < nj; i++)\n    for (j = 0; j < nm; j++)\n      C[i][j] = ((DATA_TYPE) i*(j+3)) / nl;\n  for (i = 0; i < nm; i++)\n    for (j = 0; j < nl; j++)\n      D[i][j] = ((DATA_TYPE) i*(j+2)) / nk;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        62,
+        136
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        91,
+        158,
+        436
+      ],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        106
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        187,
+        236,
+        258
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        202
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        287,
+        358
+      ],
+      "name": "nm",
+      "type": "int"
+    },
+    {
+      "locations": [
+        302
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        336,
+        387
+      ],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        402
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

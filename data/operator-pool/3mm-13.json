@@ -1,0 +1,94 @@
+{
+  "code": "{\n  int i, j, k;\n\n#pragma scop\n  /* E := A*B */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\tE[i][j] = 0;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  E[i][j] += A[i][k] * B[k][j];\n      }\n  /* F := C*D */\n  for (i = 0; i < _PB_NJ; i++)\n    for (j = 0; j < _PB_NL; j++)\n      {\n\tF[i][j] = 0;\n\tfor (k = 0; k < _PB_NM; ++k)\n\t  F[i][j] += C[i][k] * D[k][j];\n      }\n  /* G := E*F */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NL; j++)\n      {\n\tG[i][j] = 0;\n\tfor (k = 0; k < _PB_NJ; ++k)\n\t  G[i][j] += E[i][k] * F[k][j];\n      }\n#pragma endscop\n\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        36,
+        121,
+        167,
+        389,
+        526
+      ],
+      "name": "E",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        41,
+        178
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        43,
+        188
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        210,
+        295,
+        341,
+        391,
+        536
+      ],
+      "name": "F",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nm",
+      "type": "int"
+    },
+    {
+      "locations": [
+        215,
+        352
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        217,
+        362
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        384,
+        469,
+        515
+      ],
+      "name": "G",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

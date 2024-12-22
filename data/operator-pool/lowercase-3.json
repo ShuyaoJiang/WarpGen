@@ -1,0 +1,36 @@
+{
+  "code": "{\n    UChar c = data[i];\n    ored |= c;\n    output[i] = toASCIILower(c);\n  }",
+  "postContext": [
+    {
+      "locations": [
+        29
+      ],
+      "name": "ored",
+      "type": "unsigned short"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "data",
+      "type": "const unsigned short *__restrict"
+    },
+    {
+      "locations": [
+        21,
+        51
+      ],
+      "name": "i",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        44
+      ],
+      "name": "output",
+      "type": "unsigned short *__restrict"
+    }
+  ]
+}

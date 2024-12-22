@@ -1,0 +1,61 @@
+
+#ifndef INT_GENERATOR
+#define INT_GENERATOR(type, name, min, max)
+#endif
+
+#ifndef REAL_GENERATOR
+#define REAL_GENERATOR(type, name, min, max)
+#endif
+
+#ifndef NUM_GENERATOR
+#define NUM_GENERATOR(type, name, idx)
+#endif
+
+#ifndef MAP_GENERATOR
+#define MAP_GENERATOR(type, idx)
+#endif
+
+INT_GENERATOR(char, char, -128, 127)
+INT_GENERATOR(short, short, -32768, 32767)
+INT_GENERATOR(int, int, -1000000, 1000000)
+INT_GENERATOR(long, long, -1000000, 1000000)
+INT_GENERATOR(long long, ll, -1000000, 1000000)
+INT_GENERATOR(unsigned char, uchar, 0, 255)
+INT_GENERATOR(unsigned short, ushort, 0, 65535)
+INT_GENERATOR(unsigned int, uint, 0, 1000000)
+INT_GENERATOR(unsigned long, ulong, 0, 1000000)
+INT_GENERATOR(unsigned long long, ull, 0, 1000000)
+
+REAL_GENERATOR(float, float, -10e6, 10e6)
+REAL_GENERATOR(double, double, -10e6, 10e6)
+
+NUM_GENERATOR(char, char, 0)
+NUM_GENERATOR(short, short, 1)
+NUM_GENERATOR(int, int, 2)
+NUM_GENERATOR(long, long, 3)
+NUM_GENERATOR(long long, ll, 4)
+NUM_GENERATOR(unsigned char, uchar, 5)
+NUM_GENERATOR(unsigned short, ushort, 6)
+NUM_GENERATOR(unsigned int, uint, 7)
+NUM_GENERATOR(unsigned long, ulong, 8)
+NUM_GENERATOR(unsigned long long, ull, 9)
+NUM_GENERATOR(float, float, 10)
+NUM_GENERATOR(double, double, 11)
+
+MAP_GENERATOR(char, 0)
+MAP_GENERATOR(short, 1)
+MAP_GENERATOR(int, 2)
+MAP_GENERATOR(long, 3)
+MAP_GENERATOR(long long, 4)
+MAP_GENERATOR(unsigned char, 5)
+MAP_GENERATOR(unsigned short, 6)
+MAP_GENERATOR(unsigned int, 7)
+MAP_GENERATOR(unsigned long, 8)
+MAP_GENERATOR(unsigned long long, 9)
+MAP_GENERATOR(float, 10)
+MAP_GENERATOR(double, 11)
+
+#undef INT_GENERATOR
+#undef REAL_GENERATOR
+#undef NUM_GENERATOR
+#undef MAP_GENERATOR

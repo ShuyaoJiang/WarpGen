@@ -1,0 +1,68 @@
+{
+  "code": "for (j = 0; j < nj; j++) {\n#if !FMA_DISABLED\n      C_StrictFP[i][j] =\n#endif\n\t      C[i][j] = ((DATA_TYPE) i*j) / ni;\n      B[i][j] = ((DATA_TYPE) i*j) / ni;\n    }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        65,
+        89,
+        109,
+        129,
+        149
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        51
+      ],
+      "name": "C_StrictFP",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        62,
+        86,
+        107,
+        126,
+        147
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        84
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        114,
+        154
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        124
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

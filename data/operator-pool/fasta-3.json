@@ -1,0 +1,31 @@
+{
+  "code": "{\n        cp += genelist[i].p;\n        genelist[i].p = cp;\n    }",
+  "postContext": [
+    {
+      "locations": [
+        10,
+        55
+      ],
+      "name": "cp",
+      "type": "float"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16,
+        39
+      ],
+      "name": "genelist",
+      "type": "aminoacid_t *"
+    },
+    {
+      "locations": [
+        25,
+        48
+      ],
+      "name": "i",
+      "type": "size_t"
+    }
+  ]
+}

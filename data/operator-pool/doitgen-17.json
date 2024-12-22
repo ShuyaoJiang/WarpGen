@@ -1,0 +1,72 @@
+{
+  "code": "for (s = 0; s < _PB_NP; s++)\n\t  sum[r][q][p] = sum[r][q][p] + A[r][q][s] * C4[s][p];\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        70,
+        78
+      ],
+      "name": "s",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        32,
+        47
+      ],
+      "name": "sum",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        36,
+        51,
+        64
+      ],
+      "name": "r",
+      "type": "int"
+    },
+    {
+      "locations": [
+        39,
+        54,
+        67
+      ],
+      "name": "q",
+      "type": "int"
+    },
+    {
+      "locations": [
+        42,
+        57,
+        81
+      ],
+      "name": "p",
+      "type": "int"
+    },
+    {
+      "locations": [
+        62
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        75
+      ],
+      "name": "C4",
+      "type": "double (*)[128]"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "code": "for (i = 0; i < length; i++) {\n    UChar c = data[i];\n    ored |= c;\n    output[i] = toASCIILower(c);\n  }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        50,
+        80
+      ],
+      "name": "i",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        58
+      ],
+      "name": "ored",
+      "type": "unsigned short"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "length",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        45
+      ],
+      "name": "data",
+      "type": "const unsigned short *__restrict"
+    },
+    {
+      "locations": [
+        73
+      ],
+      "name": "output",
+      "type": "unsigned short *__restrict"
+    }
+  ]
+}

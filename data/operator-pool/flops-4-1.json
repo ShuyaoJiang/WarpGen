@@ -1,0 +1,110 @@
+{
+  "code": "for( i = 1 ; i <= m-1 ; i++ )\n   {\n   u = (double)i * x;\n   w = u * u;\n   s = s + w*(w*(w*(w*(w*(B6*w+B5)+B4)+B3)+B2)+B1)+one;\n   }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        13,
+        24,
+        50
+      ],
+      "name": "i",
+      "type": "long"
+    },
+    {
+      "locations": [
+        38,
+        64,
+        68
+      ],
+      "name": "u",
+      "type": "double"
+    },
+    {
+      "locations": [
+        60,
+        82,
+        85,
+        88,
+        91,
+        94,
+        100
+      ],
+      "name": "w",
+      "type": "double"
+    },
+    {
+      "locations": [
+        74,
+        78
+      ],
+      "name": "s",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        18
+      ],
+      "name": "m",
+      "type": "long"
+    },
+    {
+      "locations": [
+        54
+      ],
+      "name": "x",
+      "type": "double"
+    },
+    {
+      "locations": [
+        97
+      ],
+      "name": "B6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        102
+      ],
+      "name": "B5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        106
+      ],
+      "name": "B4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        110
+      ],
+      "name": "B3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        114
+      ],
+      "name": "B2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        118
+      ],
+      "name": "B1",
+      "type": "double"
+    },
+    {
+      "locations": [
+        122
+      ],
+      "name": "one",
+      "type": "double"
+    }
+  ]
+}

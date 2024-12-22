@@ -1,0 +1,13 @@
+{
+  "code": "{\n    unsigned long const IM = 139968;\n    unsigned long const IA = 3877;\n    unsigned long const IC = 29573;\n    static unsigned long last = 42;\n    last = (last * IA + IC) % IM;\n    /*Integer to float conversions are faster if the integer is signed*/\n    return max * (long) last / IM;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        264
+      ],
+      "name": "max",
+      "type": "float"
+    }
+  ]
+}

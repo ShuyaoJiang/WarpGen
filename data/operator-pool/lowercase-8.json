@@ -1,0 +1,13 @@
+{
+  "code": "{\n  size_t i;\n  for (i = 0; i < 32; i++)\n    doTest(i);\n\n  return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        45
+      ],
+      "name": "doTest",
+      "type": "void (size_t)"
+    }
+  ]
+}

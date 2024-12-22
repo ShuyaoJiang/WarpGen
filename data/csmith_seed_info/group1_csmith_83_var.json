@@ -1,0 +1,32 @@
+[
+    {
+        "beginLineNum": 53,
+        "lastUsedLineNum": 66,
+        "name": "crc"
+    },
+    {
+        "beginLineNum": 123,
+        "lastUsedLineNum": 125,
+        "name": "i"
+    },
+    {
+        "beginLineNum": 55,
+        "lastUsedLineNum": 59,
+        "name": "j"
+    },
+    {
+        "beginLineNum": 33,
+        "lastUsedLineNum": 34,
+        "name": "l_2"
+    },
+    {
+        "beginLineNum": 54,
+        "lastUsedLineNum": 61,
+        "name": "poly"
+    },
+    {
+        "beginLineNum": 43,
+        "lastUsedLineNum": 48,
+        "name": "print_hash_value"
+    }
+]

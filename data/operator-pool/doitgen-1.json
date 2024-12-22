@@ -1,0 +1,79 @@
+{
+  "code": "for (i = 0; i < nr; i++)\n    for (j = 0; j < nq; j++)\n      for (k = 0; k < np; k++)\n#if !FMA_DISABLED\n\tA_StrictFP[i][j][k] =\n#endif\n\t       \tA[i][j][k] = ((DATA_TYPE) i*j + k) / np;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        115,
+        144,
+        168
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        34,
+        41,
+        49,
+        118,
+        147,
+        170
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        65,
+        72,
+        80,
+        121,
+        150,
+        174
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [
+        45
+      ],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [
+        76,
+        179
+      ],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        104
+      ],
+      "name": "A_StrictFP",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        142
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    }
+  ]
+}

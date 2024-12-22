@@ -1,0 +1,24 @@
+{
+  "code": "for (i = 0; i < 32; i++)\n    doTest(i);\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        36
+      ],
+      "name": "i",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        29
+      ],
+      "name": "doTest",
+      "type": "void (size_t)"
+    }
+  ]
+}

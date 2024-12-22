@@ -1,0 +1,27 @@
+{
+  "code": "{\n  // Do a faster loop for the case where all the characters are ASCII.\n  UChar ored = 0;\n  size_t i;\n  for (i = 0; i < length; i++) {\n    UChar c = data[i];\n    ored |= c;\n    output[i] = toASCIILower(c);\n  }\n  if (!(ored & ~0x7F))\n    return 1;\n\n  return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        121
+      ],
+      "name": "length",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        150
+      ],
+      "name": "data",
+      "type": "const unsigned short *__restrict"
+    },
+    {
+      "locations": [
+        178
+      ],
+      "name": "output",
+      "type": "unsigned short *__restrict"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "code": "if (pos >= len) pos -= len;\n",
+  "postContext": [
+    {
+      "locations": [
+        4,
+        16
+      ],
+      "name": "pos",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        11,
+        23
+      ],
+      "name": "len",
+      "type": "size_t"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "code": "for (b=0; b<n; b++)\n\t    for (c=0; c<n; c++)\n\t\tfor (d=0; d<n; d++)\n\t\t    for (e=0; e<n; e++)\n\t\t\tfor (f=0; f<n; f++)\n\t\t\t    x++;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        10,
+        15
+      ],
+      "name": "b",
+      "type": "int"
+    },
+    {
+      "locations": [
+        30,
+        35,
+        40
+      ],
+      "name": "c",
+      "type": "int"
+    },
+    {
+      "locations": [
+        52,
+        57,
+        62
+      ],
+      "name": "d",
+      "type": "int"
+    },
+    {
+      "locations": [
+        78,
+        83,
+        88
+      ],
+      "name": "e",
+      "type": "int"
+    },
+    {
+      "locations": [
+        101,
+        106,
+        111
+      ],
+      "name": "f",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        12,
+        37,
+        59,
+        85,
+        108
+      ],
+      "name": "n",
+      "type": "int"
+    },
+    {
+      "locations": [
+        123
+      ],
+      "name": "x",
+      "type": "int"
+    }
+  ]
+}

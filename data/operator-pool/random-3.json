@@ -1,0 +1,5 @@
+{
+  "code": "{\n    gen_random(100.0);\n  }",
+  "postContext": [],
+  "preContext": []
+}

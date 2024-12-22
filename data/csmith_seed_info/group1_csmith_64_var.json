@@ -1,0 +1,57 @@
+[
+    {
+        "beginLineNum": 53,
+        "lastUsedLineNum": 66,
+        "name": "crc"
+    },
+    {
+        "beginLineNum": 56,
+        "lastUsedLineNum": 125,
+        "name": "i"
+    },
+    {
+        "beginLineNum": 56,
+        "lastUsedLineNum": 69,
+        "name": "j"
+    },
+    {
+        "beginLineNum": 56,
+        "lastUsedLineNum": 69,
+        "name": "k"
+    },
+    {
+        "beginLineNum": 41,
+        "lastUsedLineNum": 45,
+        "name": "l_12"
+    },
+    {
+        "beginLineNum": 42,
+        "lastUsedLineNum": 46,
+        "name": "l_15"
+    },
+    {
+        "beginLineNum": 35,
+        "lastUsedLineNum": 46,
+        "name": "l_3"
+    },
+    {
+        "beginLineNum": 36,
+        "lastUsedLineNum": 47,
+        "name": "l_5"
+    },
+    {
+        "beginLineNum": 39,
+        "lastUsedLineNum": 44,
+        "name": "l_8"
+    },
+    {
+        "beginLineNum": 54,
+        "lastUsedLineNum": 61,
+        "name": "poly"
+    },
+    {
+        "beginLineNum": 57,
+        "lastUsedLineNum": 74,
+        "name": "print_hash_value"
+    }
+]

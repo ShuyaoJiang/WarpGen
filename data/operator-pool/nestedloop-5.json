@@ -1,0 +1,40 @@
+{
+  "code": "for (e=0; e<n; e++)\n\t\t\tfor (f=0; f<n; f++)\n\t\t\t    x++;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        10,
+        15
+      ],
+      "name": "e",
+      "type": "int"
+    },
+    {
+      "locations": [
+        28,
+        33,
+        38
+      ],
+      "name": "f",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        12,
+        35
+      ],
+      "name": "n",
+      "type": "int"
+    },
+    {
+      "locations": [
+        50
+      ],
+      "name": "x",
+      "type": "int"
+    }
+  ]
+}

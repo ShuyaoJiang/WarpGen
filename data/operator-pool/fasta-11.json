@@ -1,0 +1,43 @@
+{
+  "code": "do {\n\t    float r = myrandom (1.0);\n\t    size_t i = 0;\n\t    while (genelist[i].p < r)\n\t\t++i; /* Linear search */\n\t    buf[pos++] = genelist[i].c;\n\t} while (pos < line);\n",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        20
+      ],
+      "name": "myrandom",
+      "type": "float (float)"
+    },
+    {
+      "locations": [
+        67,
+        131
+      ],
+      "name": "genelist",
+      "type": "const aminoacid_t *"
+    },
+    {
+      "locations": [
+        118
+      ],
+      "name": "buf",
+      "type": "char[61]"
+    },
+    {
+      "locations": [
+        122,
+        156
+      ],
+      "name": "pos",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        162
+      ],
+      "name": "line",
+      "type": "size_t"
+    }
+  ]
+}

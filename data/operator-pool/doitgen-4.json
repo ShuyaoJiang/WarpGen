@@ -1,0 +1,45 @@
+{
+  "code": "for (i = 0; i < np; i++)\n    for (j = 0; j < np; j++)\n      C4[i][j] = ((DATA_TYPE) i*j) / np;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        63,
+        84
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        34,
+        41,
+        49,
+        66,
+        86
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16,
+        45,
+        91
+      ],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        60
+      ],
+      "name": "C4",
+      "type": "double (*)[128]"
+    }
+  ]
+}

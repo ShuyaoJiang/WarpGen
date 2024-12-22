@@ -1,0 +1,30 @@
+{
+  "code": "{\n  int i, j;\n  char *printmat = malloc(ni*16 + 1); printmat[ni*16] = 0;\n\n  for (i = 0; i < ni; i++) {\n    for (j = 0; j < ni; j++)\n      print_element(C[i][j], j*16, printmat);\n    fputs(printmat, stderr);\n  }\n  free(printmat);\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        40,
+        61,
+        92,
+        123
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        138
+      ],
+      "name": "print_element",
+      "type": "void (double, int, char *)"
+    },
+    {
+      "locations": [
+        152
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

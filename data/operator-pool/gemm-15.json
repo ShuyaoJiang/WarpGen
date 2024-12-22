@@ -1,0 +1,67 @@
+{
+  "code": "for (k = 0; k < _PB_NK; ++k)\n\t  C[i][j] += alpha * A[i][k] * B[k][j];\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        26,
+        56,
+        63
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        32
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        34,
+        53
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        37,
+        66
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        43
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        51
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        61
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

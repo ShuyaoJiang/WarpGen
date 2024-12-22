@@ -1,0 +1,32 @@
+{
+  "code": "{\n  int i, j;\n  double AbsTolerance = FP_ABSTOLERANCE;\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NK; j++)\n      {\n        double V1 = A[i][j];\n        double V2 = B[i][j];\n        double Diff = fabs(V1 - V2);\n        if (Diff > AbsTolerance) {\n          fprintf(stderr, \"A[%d][%d] = %lf and B[%d][%d] = %lf differ more than\"\n                  \" FP_ABSTOLERANCE = %lf\\n\", i, j, V1, i, j, V2, AbsTolerance);\n          return 0;\n        }\n      }\n\n  /* All elements are within the allowed FP_ABSTOLERANCE error margin.  */\n  return 1;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        147,
+        284
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        176,
+        304
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

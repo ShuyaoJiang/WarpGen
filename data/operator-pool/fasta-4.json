@@ -1,0 +1,25 @@
+{
+  "code": "{\n    size_t pos = 0;\n    size_t len = strlen (s);\n    char *s2 = malloc (len + WIDTH);\n    memcpy (s2, s, len);\n    memcpy (s2 + len, s, WIDTH);\n    do {\n     \tsize_t line = MIN(WIDTH, count);\n     \tfwrite (s2 + pos,1,line,stdout);\n     \tputchar ('\\n');\n     \tpos += line;\n     \tif (pos >= len) pos -= len;\n     \tcount -= line;\n    } while (count);\n    free (s2);\n}",
+  "postContext": [
+    {
+      "locations": [
+        186,
+        314,
+        342
+      ],
+      "name": "count",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        47,
+        104,
+        135
+      ],
+      "name": "s",
+      "type": "const char *"
+    }
+  ]
+}

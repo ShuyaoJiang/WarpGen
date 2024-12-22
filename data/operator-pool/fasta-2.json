@@ -1,0 +1,41 @@
+{
+  "code": "for (i = 0; i < len; i++) {\n        cp += genelist[i].p;\n        genelist[i].p = cp;\n    }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        21,
+        51,
+        74
+      ],
+      "name": "i",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        36,
+        81
+      ],
+      "name": "cp",
+      "type": "float"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "len",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        42,
+        65
+      ],
+      "name": "genelist",
+      "type": "aminoacid_t *"
+    }
+  ]
+}

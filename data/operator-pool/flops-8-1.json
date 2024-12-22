@@ -1,0 +1,169 @@
+{
+  "code": "for( i = 1 ; i <= m-1 ; i++ )\n   {\n   u = (double)i * x;\n   w = u * u;\n   v = w*(w*(w*(w*(w*(B6*w+B5)+B4)+B3)+B2)+B1)+one;\n   s = s + v*v*u*((((((A6*w+A5)*w+A4)*w+A3)*w+A2)*w+A1)*w+one);\n   }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        13,
+        24,
+        50
+      ],
+      "name": "i",
+      "type": "long"
+    },
+    {
+      "locations": [
+        38,
+        64,
+        68,
+        138
+      ],
+      "name": "u",
+      "type": "double"
+    },
+    {
+      "locations": [
+        60,
+        78,
+        81,
+        84,
+        87,
+        90,
+        96,
+        149,
+        155,
+        161,
+        167,
+        173,
+        179
+      ],
+      "name": "w",
+      "type": "double"
+    },
+    {
+      "locations": [
+        74,
+        134,
+        136
+      ],
+      "name": "v",
+      "type": "double"
+    },
+    {
+      "locations": [
+        126,
+        130
+      ],
+      "name": "s",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        18
+      ],
+      "name": "m",
+      "type": "long"
+    },
+    {
+      "locations": [
+        54
+      ],
+      "name": "x",
+      "type": "double"
+    },
+    {
+      "locations": [
+        93
+      ],
+      "name": "B6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        98
+      ],
+      "name": "B5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        102
+      ],
+      "name": "B4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        106
+      ],
+      "name": "B3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        110
+      ],
+      "name": "B2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        114
+      ],
+      "name": "B1",
+      "type": "double"
+    },
+    {
+      "locations": [
+        118,
+        181
+      ],
+      "name": "one",
+      "type": "double"
+    },
+    {
+      "locations": [
+        146
+      ],
+      "name": "A6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        151
+      ],
+      "name": "A5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        157
+      ],
+      "name": "A4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        163
+      ],
+      "name": "A3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        169
+      ],
+      "name": "A2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        175
+      ],
+      "name": "A1",
+      "type": "double"
+    }
+  ]
+}

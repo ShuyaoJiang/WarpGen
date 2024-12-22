@@ -1,0 +1,57 @@
+{
+  "code": "{\n  /* Retrieve problem size. */\n  int ni = NI;\n  int nj = NJ;\n\n  /* Variable declaration/allocation. */\n  DATA_TYPE alpha;\n  DATA_TYPE beta;\n  POLYBENCH_2D_ARRAY_DECL(C,DATA_TYPE,NI,NJ,ni,nj);\n#if !FMA_DISABLED\n  POLYBENCH_2D_ARRAY_DECL(C_StrictFP,DATA_TYPE,NI,NJ,ni,nj);\n#endif\n  POLYBENCH_2D_ARRAY_DECL(A,DATA_TYPE,NJ,NJ,nj,nj);\n  POLYBENCH_2D_ARRAY_DECL(B,DATA_TYPE,NI,NJ,ni,nj);\n\n  /* Initialize array(s). */\n  init_array (ni, nj, &alpha, &beta,\n\t      POLYBENCH_ARRAY(C),\n#if !FMA_DISABLED\n\t      POLYBENCH_ARRAY(C_StrictFP),\n#endif\n\t      POLYBENCH_ARRAY(A),\n\t      POLYBENCH_ARRAY(B));\n\n  /* Start timer. */\n  polybench_start_instruments;\n\n  /* Run kernel. */\n  kernel_symm (ni, nj,\n\t       alpha, beta,\n\t       POLYBENCH_ARRAY(C),\n\t       POLYBENCH_ARRAY(A),\n\t       POLYBENCH_ARRAY(B));\n\n  /* Stop and print timer. */\n  polybench_stop_instruments;\n  polybench_print_instruments;\n\n#if FMA_DISABLED\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(ni, nj, POLYBENCH_ARRAY(C)));\n#else\n  kernel_symm_StrictFP(ni, nj,\n                       alpha, beta,\n                       POLYBENCH_ARRAY(C_StrictFP),\n                       POLYBENCH_ARRAY(A),\n                       POLYBENCH_ARRAY(B));\n  if (!check_FP(ni, nj, POLYBENCH_ARRAY(C), POLYBENCH_ARRAY(C_StrictFP)))\n    return 1;\n\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(ni, nj, POLYBENCH_ARRAY(C_StrictFP)));\n#endif\n\n  /* Be clean. */\n  POLYBENCH_FREE_ARRAY(C);\n#if !FMA_DISABLED\n  POLYBENCH_FREE_ARRAY(C_StrictFP);\n#endif\n  POLYBENCH_FREE_ARRAY(A);\n  POLYBENCH_FREE_ARRAY(B);\n\n  return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "polybench_alloc_data",
+      "type": "void *(unsigned long long, int)"
+    },
+    {
+      "locations": [
+        416
+      ],
+      "name": "init_array",
+      "type": "void (int, int, double *, double *, double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        670
+      ],
+      "name": "kernel_symm",
+      "type": "void (int, int, double, double, double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        1093
+      ],
+      "name": "kernel_symm_StrictFP",
+      "type": "void (int, int, double, double, double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        1304
+      ],
+      "name": "check_FP",
+      "type": "int (int, int, double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [],
+      "name": "argc",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "argv",
+      "type": "char **"
+    },
+    {
+      "locations": [
+        1043,
+        1522
+      ],
+      "name": "print_array",
+      "type": "void (int, int, double (*)[1024])"
+    }
+  ]
+}

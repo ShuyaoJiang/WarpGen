@@ -1,0 +1,106 @@
+{
+  "code": "for (r = 0; r < _PB_NR; r++)\n    for (q = 0; q < _PB_NQ; q++)  {\n      for (p = 0; p < _PB_NP; p++)  {\n\tsum[r][q][p] = 0;\n\tfor (s = 0; s < _PB_NP; s++)\n\t  sum[r][q][p] = sum[r][q][p] + A[r][q][s] * C4[s][p];\n      }\n      for (p = 0; p < _PB_NR; p++)\n\tA[r][q][p] = sum[r][q][p];\n    }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        108,
+        159,
+        174,
+        187,
+        254,
+        269
+      ],
+      "name": "r",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        45,
+        57,
+        111,
+        162,
+        177,
+        190,
+        257,
+        272
+      ],
+      "name": "q",
+      "type": "int"
+    },
+    {
+      "locations": [
+        76,
+        83,
+        95,
+        114,
+        165,
+        180,
+        204,
+        227,
+        234,
+        246,
+        260,
+        275
+      ],
+      "name": "p",
+      "type": "int"
+    },
+    {
+      "locations": [
+        128,
+        135,
+        147,
+        193,
+        201
+      ],
+      "name": "s",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        104,
+        155,
+        170,
+        265
+      ],
+      "name": "sum",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        185,
+        252
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        198
+      ],
+      "name": "C4",
+      "type": "double (*)[128]"
+    }
+  ]
+}

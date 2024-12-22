@@ -1,0 +1,88 @@
+{
+  "code": "for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NI; j++)\n      for (k = 0; k < _PB_NJ; k++)\n\t{\n\t  C[i][j] += alpha * A[i][k] * B[j][k];\n\t  C[i][j] += alpha * B[i][k] * A[j][k];\n\t}",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        105,
+        124,
+        146,
+        165
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        45,
+        57,
+        108,
+        134,
+        149,
+        175
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        73,
+        80,
+        92,
+        127,
+        137,
+        168,
+        178
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        103,
+        144
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        114,
+        155
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        122,
+        173
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        132,
+        163
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "code": "while (genelist[i].p < r)\n\t\t++i;\n",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        7
+      ],
+      "name": "genelist",
+      "type": "const aminoacid_t *"
+    },
+    {
+      "locations": [
+        16,
+        30
+      ],
+      "name": "i",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        23
+      ],
+      "name": "r",
+      "type": "float"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "code": "{\n    puts(\"hello world\\n\");\n    return(0);\n}",
+  "postContext": [],
+  "preContext": []
+}

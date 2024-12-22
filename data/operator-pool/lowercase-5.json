@@ -1,0 +1,40 @@
+{
+  "code": "{\n  const size_t numberOfCharacters = numberOfIterations;\n  const size_t testDataLength = ((numberOfCharacters + staticDataLength - 1) / staticDataLength) * staticDataLength;\n  UChar* testData = malloc(sizeof(UChar) * testDataLength);\n  size_t i;\n  for (i = 0; i < testDataLength; i += staticDataLength)\n    memcpy(testData + i, staticData, staticDataLength * sizeof(staticData[0]));\n\n  UChar* result = malloc(sizeof(UChar) * testDataLength);\n  printf(\"iterations (%ld characters)\\n\", numberOfIterations, numberOfCharacters);\n\n  memset(result, 0, sizeof(UChar) * testDataLength);\n#ifdef SMALL_PROBLEM_SIZE\n  for (i = 0; i < 100000; i++)\n#else\n  for (i = 0; i < 10000000; i++)\n#endif\n    lower_StringImpl(testData, numberOfCharacters, result);\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        38,
+        485
+      ],
+      "name": "numberOfIterations",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        113,
+        137,
+        157,
+        286,
+        341
+      ],
+      "name": "staticDataLength",
+      "type": "const size_t"
+    },
+    {
+      "locations": [
+        329,
+        367
+      ],
+      "name": "staticData",
+      "type": "unsigned short[16]"
+    },
+    {
+      "locations": [
+        687
+      ],
+      "name": "lower_StringImpl",
+      "type": "size_t (const unsigned short *__restrict, size_t, unsigned short *__restrict)"
+    }
+  ]
+}

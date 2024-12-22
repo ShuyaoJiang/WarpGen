@@ -1,0 +1,29 @@
+{
+  "code": "{\n \tsize_t n = 5000000;\n\n    static aminoacid_t iub[] = {\n\t{ 0.27, 'a' },\n\t{ 0.12, 'c' },\n\t{ 0.12, 'g' },\n\t{ 0.27, 't' },\n\t{ 0.02, 'B' },\n\t{ 0.02, 'D' },\n\t{ 0.02, 'H' },\n\t{ 0.02, 'K' },\n\t{ 0.02, 'M' },\n\t{ 0.02, 'N' },\n\t{ 0.02, 'R' },\n\t{ 0.02, 'S' },\n\t{ 0.02, 'V' },\n\t{ 0.02, 'W' },\n\t{ 0.02, 'Y' }};\n\n    static aminoacid_t homosapiens[] = {\n\t{ 0.3029549426680, 'a' },\n\t{ 0.1979883004921, 'c' },\n\t{ 0.1975473066391, 'g' },\n\t{ 0.3015094502008, 't' }};\n\n    accumulate_probabilities (iub, NELEMENTS(iub));\n    accumulate_probabilities (homosapiens, NELEMENTS(homosapiens));\n\n    static char const *const alu =\"\\\nGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGG\\\nGAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGA\\\nCCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAAT\\\nACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCA\\\nGCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGG\\\nAGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCC\\\nAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA\";\n\n    fputs (\">ONE Homo sapiens alu\\n\", stdout);\n    repeat_fasta (alu, 2 * n);\n    fputs (\">TWO IUB ambiguity codes\\n\", stdout);\n    random_fasta (iub, 3 * n);\n    fputs (\">THREE Homo sapiens frequency\\n\", stdout);\n    random_fasta (homosapiens, 5 * n);\n    return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        455,
+        507
+      ],
+      "name": "accumulate_probabilities",
+      "type": "void (aminoacid_t *, size_t)"
+    },
+    {
+      "locations": [
+        963
+      ],
+      "name": "repeat_fasta",
+      "type": "void (const char *, size_t)"
+    },
+    {
+      "locations": [
+        1044,
+        1130
+      ],
+      "name": "random_fasta",
+      "type": "void (const aminoacid_t *, size_t)"
+    }
+  ]
+}

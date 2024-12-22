@@ -1,0 +1,61 @@
+{
+  "code": "{\n   x = (double)i * v;\n   u = x * x;\n   s = s - w / ( x + w ) - x / ( u + w ) - u / ( x * u + w );\n   }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        31,
+        35,
+        55,
+        65,
+        87
+      ],
+      "name": "x",
+      "type": "double"
+    },
+    {
+      "locations": [
+        27,
+        71,
+        81,
+        91
+      ],
+      "name": "u",
+      "type": "double"
+    },
+    {
+      "locations": [
+        41,
+        45
+      ],
+      "name": "s",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        17
+      ],
+      "name": "i",
+      "type": "long"
+    },
+    {
+      "locations": [
+        21
+      ],
+      "name": "v",
+      "type": "double"
+    },
+    {
+      "locations": [
+        49,
+        59,
+        75,
+        95
+      ],
+      "name": "w",
+      "type": "double"
+    }
+  ]
+}

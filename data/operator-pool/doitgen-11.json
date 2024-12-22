@@ -1,0 +1,46 @@
+{
+  "code": "{\n  int r, q, p, s;\n\n#pragma scop\n  for (r = 0; r < _PB_NR; r++)\n    for (q = 0; q < _PB_NQ; q++)  {\n      for (p = 0; p < _PB_NP; p++)  {\n\tsum[r][q][p] = 0;\n\tfor (s = 0; s < _PB_NP; s++)\n\t  sum[r][q][p] = sum[r][q][p] + A[r][q][s] * C4[s][p];\n      }\n      for (p = 0; p < _PB_NR; p++)\n\tA[r][q][p] = sum[r][q][p];\n    }\n#pragma endscop\n\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        140,
+        191,
+        206,
+        301
+      ],
+      "name": "sum",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        221,
+        288
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        234
+      ],
+      "name": "C4",
+      "type": "double (*)[128]"
+    }
+  ]
+}

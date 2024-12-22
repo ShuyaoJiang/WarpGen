@@ -1,0 +1,13 @@
+{
+  "code": "while (N--) {\n    gen_random(100.0);\n  }",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        7
+      ],
+      "name": "N",
+      "type": "int"
+    }
+  ]
+}

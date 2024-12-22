@@ -1,0 +1,47 @@
+{
+  "code": "for (j = 0; j < nj; j++)\n      A[i][j] = ((DATA_TYPE) i*j) / ni;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        36,
+        56
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        31
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        33,
+        54
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        61
+      ],
+      "name": "ni",
+      "type": "int"
+    }
+  ]
+}

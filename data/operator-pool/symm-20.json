@@ -1,0 +1,76 @@
+{
+  "code": "for (k = 0; k < j - 1; k++)\n\t  {\n\t    C[k][j] += alpha * A[k][i] * B[i][j];\n\t    acc += B[k][j] * A[k][i];\n\t  }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        23,
+        40,
+        59,
+        90,
+        100
+      ],
+      "name": "k",
+      "type": "int"
+    },
+    {
+      "locations": [
+        81
+      ],
+      "name": "acc",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16,
+        43,
+        72,
+        93
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        49
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        57,
+        98
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        62,
+        69,
+        103
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        67,
+        88
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "code": "{\n  /* Retrieve problem size. */\n  int ni = NI;\n  int nj = NJ;\n  int nk = NK;\n  int nl = NL;\n  int nm = NM;\n\n  /* Variable declaration/allocation. */\n  POLYBENCH_2D_ARRAY_DECL(E, DATA_TYPE, NI, NJ, ni, nj);\n  POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, NI, NK, ni, nk);\n  POLYBENCH_2D_ARRAY_DECL(B, DATA_TYPE, NK, NJ, nk, nj);\n  POLYBENCH_2D_ARRAY_DECL(F, DATA_TYPE, NJ, NL, nj, nl);\n  POLYBENCH_2D_ARRAY_DECL(C, DATA_TYPE, NJ, NM, nj, nm);\n  POLYBENCH_2D_ARRAY_DECL(D, DATA_TYPE, NM, NL, nm, nl);\n  POLYBENCH_2D_ARRAY_DECL(G, DATA_TYPE, NI, NL, ni, nl);\n#if !FMA_DISABLED\n  POLYBENCH_2D_ARRAY_DECL(G_StrictFP, DATA_TYPE, NI, NL, ni, nl);\n#endif\n\n  /* Initialize array(s). */\n  init_array (ni, nj, nk, nl, nm,\n\t      POLYBENCH_ARRAY(A),\n\t      POLYBENCH_ARRAY(B),\n\t      POLYBENCH_ARRAY(C),\n\t      POLYBENCH_ARRAY(D));\n\n  /* Start timer. */\n  polybench_start_instruments;\n\n  /* Run kernel. */\n  kernel_3mm (ni, nj, nk, nl, nm,\n\t      POLYBENCH_ARRAY(E),\n\t      POLYBENCH_ARRAY(A),\n\t      POLYBENCH_ARRAY(B),\n\t      POLYBENCH_ARRAY(F),\n\t      POLYBENCH_ARRAY(C),\n\t      POLYBENCH_ARRAY(D),\n\t      POLYBENCH_ARRAY(G));\n\n  /* Stop and print timer. */\n  polybench_stop_instruments;\n  polybench_print_instruments;\n\n#if FMA_DISABLED\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(ni, nl, POLYBENCH_ARRAY(G)));\n#else\n  kernel_3mm_StrictFP(ni, nj, nk, nl, nm,\n                      POLYBENCH_ARRAY(E),\n                      POLYBENCH_ARRAY(A),\n                      POLYBENCH_ARRAY(B),\n                      POLYBENCH_ARRAY(F),\n                      POLYBENCH_ARRAY(C),\n                      POLYBENCH_ARRAY(D),\n                      POLYBENCH_ARRAY(G_StrictFP));\n  if (!check_FP(ni, nl, POLYBENCH_ARRAY(G), POLYBENCH_ARRAY(G_StrictFP)))\n    return 1;\n\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(ni, nl, POLYBENCH_ARRAY(G_StrictFP)));\n#endif\n\n  /* Be clean. */\n  POLYBENCH_FREE_ARRAY(E);\n  POLYBENCH_FREE_ARRAY(A);\n  POLYBENCH_FREE_ARRAY(B);\n  POLYBENCH_FREE_ARRAY(F);\n  POLYBENCH_FREE_ARRAY(C);\n  POLYBENCH_FREE_ARRAY(D);\n  POLYBENCH_FREE_ARRAY(G);\n#if !FMA_DISABLED\n  POLYBENCH_FREE_ARRAY(G_StrictFP);\n#endif\n\n  return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "polybench_alloc_data",
+      "type": "void *(unsigned long long, int)"
+    },
+    {
+      "locations": [
+        672
+      ],
+      "name": "init_array",
+      "type": "void (int, int, int, int, int, double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        889
+      ],
+      "name": "kernel_3mm",
+      "type": "void (int, int, int, int, int, double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        1407
+      ],
+      "name": "kernel_3mm_StrictFP",
+      "type": "void (int, int, int, int, int, double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        1758
+      ],
+      "name": "check_FP",
+      "type": "int (int, int, double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [],
+      "name": "argc",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "argv",
+      "type": "char **"
+    },
+    {
+      "locations": [
+        1357,
+        1976
+      ],
+      "name": "print_array",
+      "type": "void (int, int, double (*)[1024])"
+    }
+  ]
+}

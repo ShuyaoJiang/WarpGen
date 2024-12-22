@@ -1,0 +1,60 @@
+{
+  "code": "for (k = 0; k < np; k++)\n      print_element(A[i][j][k], k*16, printmat);\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        53,
+        57
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        31
+      ],
+      "name": "print_element",
+      "type": "void (double, int, char *)"
+    },
+    {
+      "locations": [
+        45
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        47
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        50
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        63
+      ],
+      "name": "printmat",
+      "type": "char *"
+    }
+  ]
+}

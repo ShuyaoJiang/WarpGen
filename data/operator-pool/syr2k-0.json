@@ -1,0 +1,67 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j;\n\n  *alpha = 32412;\n  *beta = 2123;\n  for (i = 0; i < ni; i++)\n    for (j = 0; j < nj; j++) {\n      A[i][j] = ((DATA_TYPE) i*j) / ni;\n      B[i][j] = ((DATA_TYPE) i*j) / ni;\n    }\n  for (i = 0; i < ni; i++)\n    for (j = 0; j < ni; j++)\n#if !FMA_DISABLED\n      C_StrictFP[i][j] =\n#endif\n\t      C[i][j] = ((DATA_TYPE) i*j) / ni;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        47
+      ],
+      "name": "alpha",
+      "type": "double *"
+    },
+    {
+      "locations": [
+        65
+      ],
+      "name": "beta",
+      "type": "double *"
+    },
+    {
+      "locations": [
+        96,
+        172,
+        212,
+        240,
+        269,
+        365
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        125
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        142
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        182
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        302
+      ],
+      "name": "C_StrictFP",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        335
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

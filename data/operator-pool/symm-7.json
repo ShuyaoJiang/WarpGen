@@ -1,0 +1,64 @@
+{
+  "code": "for (i = 0; i < ni; i++) {\n    for (j = 0; j < nj; j++)\n      print_element(C[i][j], j*16, printmat);\n    fputs(printmat, stderr);\n  }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        78
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        36,
+        43,
+        51,
+        81,
+        85
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        47
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        62
+      ],
+      "name": "print_element",
+      "type": "void (double, int, char *)"
+    },
+    {
+      "locations": [
+        76
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        91,
+        112
+      ],
+      "name": "printmat",
+      "type": "char *"
+    }
+  ]
+}

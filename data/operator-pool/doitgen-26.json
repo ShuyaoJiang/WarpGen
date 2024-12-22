@@ -1,0 +1,53 @@
+{
+  "code": "for (p = 0; p < _PB_NR; p++)\n\tA[r][q][p] = sum[r][q][p];\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        38,
+        53
+      ],
+      "name": "p",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [
+        30
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        32,
+        47
+      ],
+      "name": "r",
+      "type": "int"
+    },
+    {
+      "locations": [
+        35,
+        50
+      ],
+      "name": "q",
+      "type": "int"
+    },
+    {
+      "locations": [
+        43
+      ],
+      "name": "sum",
+      "type": "double (*)[128][128]"
+    }
+  ]
+}

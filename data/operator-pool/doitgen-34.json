@@ -1,0 +1,57 @@
+{
+  "code": "{\n  /* Retrieve problem size. */\n  int nr = NR;\n  int nq = NQ;\n  int np = NP;\n\n  /* Variable declaration/allocation. */\n  POLYBENCH_3D_ARRAY_DECL(A,DATA_TYPE,NR,NQ,NP,nr,nq,np);\n#if !FMA_DISABLED\n  POLYBENCH_3D_ARRAY_DECL(A_StrictFP,DATA_TYPE,NR,NQ,NP,nr,nq,np);\n#endif\n  POLYBENCH_3D_ARRAY_DECL(sum,DATA_TYPE,NR,NQ,NP,nr,nq,np);\n  POLYBENCH_2D_ARRAY_DECL(C4,DATA_TYPE,NP,NP,np,np);\n\n  /* Initialize array(s). */\n  init_array (nr, nq, np,\n\t      POLYBENCH_ARRAY(A),\n#if !FMA_DISABLED\n\t      POLYBENCH_ARRAY(A_StrictFP),\n#endif\n\t      POLYBENCH_ARRAY(C4));\n\n  /* Start timer. */\n  polybench_start_instruments;\n\n  /* Run kernel. */\n  kernel_doitgen (nr, nq, np,\n\t\t  POLYBENCH_ARRAY(A),\n\t\t  POLYBENCH_ARRAY(C4),\n\t\t  POLYBENCH_ARRAY(sum));\n\n  /* Stop and print timer. */\n  polybench_stop_instruments;\n  polybench_print_instruments;\n\n#if FMA_DISABLED\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(nr, nq, np, POLYBENCH_ARRAY(A)));\n#else\n  kernel_doitgen_StrictFP(nr, nq, np,\n                          POLYBENCH_ARRAY(A_StrictFP),\n                          POLYBENCH_ARRAY(C4),\n                          POLYBENCH_ARRAY(sum));\n\n  if (!check_FP(nr, nq, np, POLYBENCH_ARRAY(A), POLYBENCH_ARRAY(A_StrictFP)))\n    return 1;\n\n  /* Prevent dead-code elimination. All live-out data must be printed\n     by the function call in argument. */\n  polybench_prevent_dce(print_array(nr, nq, np, POLYBENCH_ARRAY(A_StrictFP)));\n#endif\n\n  /* Be clean. */\n  POLYBENCH_FREE_ARRAY(A);\n#if !FMA_DISABLED\n  POLYBENCH_FREE_ARRAY(A_StrictFP);\n#endif\n  POLYBENCH_FREE_ARRAY(sum);\n  POLYBENCH_FREE_ARRAY(C4);\n\n  return 0;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "polybench_alloc_data",
+      "type": "void *(unsigned long long, int)"
+    },
+    {
+      "locations": [
+        415
+      ],
+      "name": "init_array",
+      "type": "void (int, int, int, double (*)[128][128], double (*)[128][128], double (*)[128])"
+    },
+    {
+      "locations": [
+        632
+      ],
+      "name": "kernel_doitgen",
+      "type": "void (int, int, int, double (*)[128][128], double (*)[128], double (*)[128][128])"
+    },
+    {
+      "locations": [
+        1036
+      ],
+      "name": "kernel_doitgen_StrictFP",
+      "type": "void (int, int, int, double (*)[128][128], double (*)[128], double (*)[128][128])"
+    },
+    {
+      "locations": [
+        1231
+      ],
+      "name": "check_FP",
+      "type": "int (int, int, int, double (*)[128][128], double (*)[128][128])"
+    },
+    {
+      "locations": [],
+      "name": "argc",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "argv",
+      "type": "char **"
+    },
+    {
+      "locations": [
+        982,
+        1453
+      ],
+      "name": "print_array",
+      "type": "void (int, int, int, double (*)[128][128])"
+    }
+  ]
+}

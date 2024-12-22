@@ -1,0 +1,13 @@
+{
+  "code": "if (!(ored & ~0x7F))\n    return 1;\n",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        6
+      ],
+      "name": "ored",
+      "type": "unsigned short"
+    }
+  ]
+}

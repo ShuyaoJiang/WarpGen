@@ -1,0 +1,85 @@
+{
+  "code": "for (r = 0; r < _PB_NR; r++)\n    for (q = 0; q < _PB_NQ; q++)\n      for (p = 0; p < _PB_NP; p++) {\n        double V1 = A[r][q][p];\n        double V2 = B[r][q][p];\n        double Diff = fabs(V1 - V2);\n        if (Diff > AbsTolerance) {\n          fprintf(stderr, \"A[%d][%d][%d] = %lf and B[%d][%d][%d] = %lf differ more than\"\n                  \" FP_ABSTOLERANCE = %lf\\n\", r, q, p, V1, r, q, p, V2, AbsTolerance);\n          return 0;\n        }\n      }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        121,
+        153,
+        370,
+        383
+      ],
+      "name": "r",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        45,
+        57,
+        124,
+        156,
+        373,
+        386
+      ],
+      "name": "q",
+      "type": "int"
+    },
+    {
+      "locations": [
+        73,
+        80,
+        92,
+        127,
+        159,
+        376,
+        389
+      ],
+      "name": "p",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        119,
+        262
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        151,
+        286
+      ],
+      "name": "B",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        219,
+        396
+      ],
+      "name": "AbsTolerance",
+      "type": "double"
+    }
+  ]
+}

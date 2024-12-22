@@ -1,0 +1,68 @@
+{
+  "code": "{\n\t  C[i][j] += alpha * A[i][k] * B[j][k];\n\t  C[i][j] += alpha * B[i][k] * A[j][k];\n\t}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        5,
+        46
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        7,
+        26,
+        48,
+        67
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        10,
+        36,
+        51,
+        77
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        16,
+        57
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        24,
+        75
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        29,
+        39,
+        70,
+        80
+      ],
+      "name": "k",
+      "type": "int"
+    },
+    {
+      "locations": [
+        34,
+        65
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

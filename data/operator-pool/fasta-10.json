@@ -1,0 +1,30 @@
+{
+  "code": "{\n\tsize_t line = MIN(WIDTH, count);\n\tsize_t pos = 0;\n\tchar buf[WIDTH + 1];\n\tdo {\n\t    float r = myrandom (1.0);\n\t    size_t i = 0;\n\t    while (genelist[i].p < r)\n\t\t++i; /* Linear search */\n\t    buf[pos++] = genelist[i].c;\n\t} while (pos < line);\n\tbuf[line] = '\\n';\n\tfwrite (buf, 1, line + 1, stdout);\n\tcount -= line;\n    }",
+  "postContext": [
+    {
+      "locations": [
+        28,
+        301
+      ],
+      "name": "count",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        96
+      ],
+      "name": "myrandom",
+      "type": "float (float)"
+    },
+    {
+      "locations": [
+        143,
+        207
+      ],
+      "name": "genelist",
+      "type": "const aminoacid_t *"
+    }
+  ]
+}

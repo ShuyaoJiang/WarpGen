@@ -1,0 +1,34 @@
+{
+  "code": "if (!check_FP(ni, POLYBENCH_ARRAY(C), POLYBENCH_ARRAY(C_StrictFP)))\n    return 1;\n",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        5
+      ],
+      "name": "check_FP",
+      "type": "int (int, double (*)[1024], double (*)[1024])"
+    },
+    {
+      "locations": [
+        14
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        34
+      ],
+      "name": "C",
+      "type": "double (*)[1024][1024]"
+    },
+    {
+      "locations": [
+        54
+      ],
+      "name": "C_StrictFP",
+      "type": "double (*)[1024][1024]"
+    }
+  ]
+}

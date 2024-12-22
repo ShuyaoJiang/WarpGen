@@ -1,0 +1,48 @@
+{
+  "code": "{\n      A[i][j] = ((DATA_TYPE) i*j) / ni;\n      B[i][j] = ((DATA_TYPE) i*j) / ni;\n    }",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        8
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        10,
+        31,
+        50,
+        71
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        13,
+        33,
+        53,
+        73
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        78
+      ],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        48
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

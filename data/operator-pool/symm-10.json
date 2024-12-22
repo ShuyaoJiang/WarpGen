@@ -1,0 +1,66 @@
+{
+  "code": "{\n  int i, j, k;\n  DATA_TYPE acc;\n\n#pragma scop\n  /*  C := alpha*A*B + beta*C, A is symetric */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\tacc = 0;\n\tfor (k = 0; k < j - 1; k++)\n\t  {\n\t    C[k][j] += alpha * A[k][i] * B[i][j];\n\t    acc += B[k][j] * A[k][i];\n\t  }\n\tC[i][j] = beta * C[i][j] + alpha * A[i][i] * B[i][j] + alpha * acc;\n      }\n#pragma endscop\n\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        54,
+        76,
+        217,
+        292,
+        309
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        59,
+        228,
+        319,
+        347
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        65,
+        79,
+        236,
+        277,
+        327
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        67,
+        246,
+        267,
+        337
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        71,
+        302
+      ],
+      "name": "beta",
+      "type": "double"
+    }
+  ]
+}

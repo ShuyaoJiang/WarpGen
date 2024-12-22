@@ -1,0 +1,85 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j, k;\n\n  /* D := alpha*A*B*C + beta*D */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\ttmp[i][j] = 0;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  tmp[i][j] += alpha * A[i][k] * B[k][j];\n      }\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NL; j++)\n      {\n\tD[i][j] *= beta;\n\tfor (k = 0; k < _PB_NJ; ++k)\n\t  D[i][j] += tmp[i][k] * C[k][j];\n      }\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        154,
+        202,
+        384
+      ],
+      "name": "tmp",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        57,
+        215
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        63,
+        223
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        65,
+        233
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        52,
+        76,
+        323,
+        373
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        71,
+        334
+      ],
+      "name": "beta",
+      "type": "double"
+    },
+    {
+      "locations": [
+        67,
+        396
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

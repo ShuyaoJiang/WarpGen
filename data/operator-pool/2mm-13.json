@@ -1,0 +1,85 @@
+{
+  "code": "{\n  int i, j, k;\n\n#pragma scop\n  /* D := alpha*A*B*C + beta*D */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\ttmp[i][j] = 0;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  tmp[i][j] += alpha * A[i][k] * B[k][j];\n      }\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NL; j++)\n      {\n\tD[i][j] *= beta;\n\tfor (k = 0; k < _PB_NJ; ++k)\n\t  D[i][j] += tmp[i][k] * C[k][j];\n      }\n#pragma endscop\n\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        138,
+        186,
+        368
+      ],
+      "name": "tmp",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        41,
+        199
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        47,
+        207
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        49,
+        217
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        36,
+        60,
+        307,
+        357
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        55,
+        318
+      ],
+      "name": "beta",
+      "type": "double"
+    },
+    {
+      "locations": [
+        51,
+        380
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

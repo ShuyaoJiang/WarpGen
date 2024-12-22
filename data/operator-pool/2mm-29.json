@@ -1,0 +1,70 @@
+{
+  "code": "{\n\tD[i][j] *= beta;\n\tfor (k = 0; k < _PB_NJ; ++k)\n\t  D[i][j] += tmp[i][k] * C[k][j];\n      }",
+  "postContext": [
+    {
+      "locations": [
+        26,
+        33,
+        47,
+        71,
+        78
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        3,
+        53
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        5,
+        55,
+        68
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        8,
+        58,
+        81
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        14
+      ],
+      "name": "beta",
+      "type": "double"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        64
+      ],
+      "name": "tmp",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        76
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

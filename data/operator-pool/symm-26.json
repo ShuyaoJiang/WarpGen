@@ -1,0 +1,51 @@
+{
+  "code": "if (Diff > AbsTolerance) {\n          fprintf(stderr, \"A[%d][%d] = %lf and B[%d][%d] = %lf differ more than\"\n                  \" FP_ABSTOLERANCE = %lf\\n\", i, j, V1, i, j, V2, AbsTolerance);\n          return 0;\n        }",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        4
+      ],
+      "name": "Diff",
+      "type": "double"
+    },
+    {
+      "locations": [
+        11,
+        174
+      ],
+      "name": "AbsTolerance",
+      "type": "double"
+    },
+    {
+      "locations": [
+        154,
+        164
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        157,
+        167
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        160
+      ],
+      "name": "V1",
+      "type": "double"
+    },
+    {
+      "locations": [
+        170
+      ],
+      "name": "V2",
+      "type": "double"
+    }
+  ]
+}

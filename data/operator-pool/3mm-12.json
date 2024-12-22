@@ -1,0 +1,53 @@
+{
+  "code": "for (j = 0; j < nl; j++)\n      print_element(G[i][j], j*16, printmat);\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        50,
+        54
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        31
+      ],
+      "name": "print_element",
+      "type": "void (double, int, char *)"
+    },
+    {
+      "locations": [
+        45
+      ],
+      "name": "G",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        47
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        60
+      ],
+      "name": "printmat",
+      "type": "char *"
+    }
+  ]
+}

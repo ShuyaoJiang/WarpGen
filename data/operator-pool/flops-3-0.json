@@ -1,0 +1,149 @@
+{
+  "code": "{\n\n#ifdef ROPT\n   register double s,u,v,w,x;\n#else\n   double s,u,v,w,x;\n#endif\n\n   long loops, NLimit;\n   register long i, m, n;\n\n   printf(\"\\n\");\n   printf(\"   FLOPS C Program (Double Precision), V2.0 18 Dec 1992\\n\\n\");\n\n\t\t\t/****************************/\n   loops = 15625;        /* Initial number of loops. */\n\t\t\t/*     DO NOT CHANGE!       */\n\t\t\t/****************************/\n\n/****************************************************/\n/* Set Variable Values.                             */\n/* T[1] references all timing results relative to   */\n/* one million loops.                               */\n/*                                                  */\n/* The program will execute from 31250 to 512000000 */\n/* loops based on a runtime of Module 1 of at least */\n/* TLimit = 15.0 seconds. That is, a runtime of 15  */\n/* seconds for Module 1 is used to determine the    */\n/* number of loops to execute.                      */\n/*                                                  */\n/* No more than NLimit = 512000000 loops are allowed*/\n/****************************************************/\n\n   TLimit = 1.0;\n   NLimit = 512000000;\n\n   piref = 3.14159265358979324;\n   one   = 1.0;\n   two   = 2.0;\n   three = 3.0;\n   four  = 4.0;\n   five  = 5.0;\n   scale = one;\n\n   printf(\"   Module     Error        RunTime      MFLOPS\\n\");\n   printf(\"                            (usec)\\n\");\n/*************************/\n/* Initialize the timer. */\n/*************************/\n#ifdef SMALL_PROBLEM_SIZE\n   m = loops*400;\n#else\n   m = loops*20000;\n#endif\n\n\n/*******************************************************/\n/* Module 3.  Calculate integral of sin(x) from 0.0 to */\n/*            PI/3.0 using Trapazoidal Method. Result  */\n/*            is 0.5. There are 17 double precision    */\n/*            operations per loop (6 +, 2 -, 9 *, 0 /) */\n/*            included in the timing.                  */\n/*            35.3% +, 11.8% -, 52.9% *, and 00.0% /   */\n/*******************************************************/\n  \n   x = piref / ( three * (double)m );              /*********************/\n   s = 0.0;                                        /*  Loop 4.          */\n   v = 0.0;                                        /*********************/\n\n   for( i = 1 ; i <= m-1 ; i++ )\n   {\n   v = v + one;\n   u = v * x;\n   w = u * u;\n   s = s + u * ((((((A6*w-A5)*w+A4)*w-A3)*w+A2)*w+A1)*w+one);\n   }\n\n   u  = piref / three;\n   w  = u * u;\n   sa = u * ((((((A6*w-A5)*w+A4)*w-A3)*w+A2)*w+A1)*w+one);\n\n   sa = x * ( sa + two * s ) / two;                /* sin(x) Results.   */\n   sb = 0.5;                                       /*********************/\n   sc = sa - sb;\n\t\t\t\t\t\t  /*********************/\n\t\t\t\t\t\t  /*   DO NOT REMOVE   */\n\t\t\t\t\t\t  /*   THIS PRINTOUT!  */\n\t\t\t\t\t\t  /*********************/\n   printf(\"     3   %13.4lf  %10.4lf  %10.4lf\\n\",\n          sc* /* stabilize output */  1e-30,\n          0* /* stabilize output */  1e-30,\n          0* /* stabilize output */  1e-30);\n\n   return 0;\n}",
+  "postContext": [
+    {
+      "locations": [
+        769,
+        1100
+      ],
+      "name": "TLimit",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1141,
+        2018,
+        2395
+      ],
+      "name": "piref",
+      "type": "double"
+    },
+    {
+      "locations": [
+        549,
+        1173,
+        1261,
+        2286,
+        2375,
+        2478
+      ],
+      "name": "one",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1189,
+        2504,
+        2516
+      ],
+      "name": "two",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1205,
+        2028,
+        2403
+      ],
+      "name": "three",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1221
+      ],
+      "name": "four",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1237
+      ],
+      "name": "five",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1253
+      ],
+      "name": "scale",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2428,
+        2488,
+        2499,
+        2643
+      ],
+      "name": "sa",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2563,
+        2648
+      ],
+      "name": "sb",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2638,
+        2840
+      ],
+      "name": "sc",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        2340,
+        2443
+      ],
+      "name": "A6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2345,
+        2448
+      ],
+      "name": "A5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2351,
+        2454
+      ],
+      "name": "A4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2357,
+        2460
+      ],
+      "name": "A3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2363,
+        2466
+      ],
+      "name": "A2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2369,
+        2472
+      ],
+      "name": "A1",
+      "type": "double"
+    }
+  ]
+}

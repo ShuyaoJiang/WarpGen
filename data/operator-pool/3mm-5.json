@@ -1,0 +1,57 @@
+{
+  "code": "for (i = 0; i < nj; i++)\n    for (j = 0; j < nm; j++)\n      C[i][j] = ((DATA_TYPE) i*(j+3)) / nl;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        20,
+        62,
+        83
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        34,
+        41,
+        49,
+        65,
+        86
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        45
+      ],
+      "name": "nm",
+      "type": "int"
+    },
+    {
+      "locations": [
+        60
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        94
+      ],
+      "name": "nl",
+      "type": "int"
+    }
+  ]
+}

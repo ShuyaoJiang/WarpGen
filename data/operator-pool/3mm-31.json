@@ -1,0 +1,79 @@
+{
+  "code": "for (i = 0; i < _PB_NJ; i++)\n    for (j = 0; j < _PB_NL; j++)\n      {\n\tF[i][j] = 0;\n\tfor (k = 0; k < _PB_NM; ++k)\n\t  F[i][j] += C[i][k] * D[k][j];\n      }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        73,
+        119,
+        130
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        45,
+        57,
+        76,
+        122,
+        143
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        90,
+        97,
+        111,
+        133,
+        140
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nl",
+      "type": "int"
+    },
+    {
+      "locations": [
+        71,
+        117
+      ],
+      "name": "F",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [],
+      "name": "nm",
+      "type": "int"
+    },
+    {
+      "locations": [
+        128
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        138
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

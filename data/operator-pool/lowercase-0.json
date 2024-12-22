@@ -1,0 +1,15 @@
+{
+  "code": "{ return c | ((c >= 'A' && c <= 'Z') << 5); }",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        9,
+        15,
+        27
+      ],
+      "name": "c",
+      "type": "unsigned short"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "code": "for (j = 0; j < _PB_NI; j++)\n      C[i][j] *= beta;\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        40
+      ],
+      "name": "j",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        35
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        37
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        46
+      ],
+      "name": "beta",
+      "type": "double"
+    }
+  ]
+}

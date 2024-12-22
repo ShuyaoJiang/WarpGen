@@ -1,0 +1,70 @@
+{
+  "code": "{\n\ttmp[i][j] = 0;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  tmp[i][j] += alpha * A[i][k] * B[k][j];\n      }",
+  "postContext": [
+    {
+      "locations": [
+        24,
+        31,
+        45,
+        77,
+        84
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        3,
+        51
+      ],
+      "name": "tmp",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        7,
+        55,
+        74
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        10,
+        58,
+        87
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        64
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        72
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        82
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

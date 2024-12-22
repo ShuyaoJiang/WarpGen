@@ -1,0 +1,41 @@
+{
+  "code": "do {\n     \tsize_t line = MIN(WIDTH, count);\n     \tfwrite (s2 + pos,1,line,stdout);\n     \tputchar ('\\n');\n     \tpos += line;\n     \tif (pos >= len) pos -= len;\n     \tcount -= line;\n    } while (count);\n",
+  "postContext": [
+    {
+      "locations": [
+        63,
+        111,
+        134,
+        146
+      ],
+      "name": "pos",
+      "type": "size_t"
+    },
+    {
+      "locations": [
+        36,
+        164,
+        192
+      ],
+      "name": "count",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        58
+      ],
+      "name": "s2",
+      "type": "char *"
+    },
+    {
+      "locations": [
+        141,
+        153
+      ],
+      "name": "len",
+      "type": "size_t"
+    }
+  ]
+}

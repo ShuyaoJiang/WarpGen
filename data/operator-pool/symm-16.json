@@ -1,0 +1,66 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j, k;\n  DATA_TYPE acc;\n\n  /*  C := alpha*A*B + beta*C, A is symetric */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\tacc = 0;\n\tfor (k = 0; k < j - 1; k++)\n\t  {\n\t    C[k][j] += alpha * A[k][i] * B[i][j];\n\t    acc += B[k][j] * A[k][i];\n\t  }\n\tC[i][j] = beta * C[i][j] + alpha * A[i][i] * B[i][j] + alpha * acc;\n      }\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        70,
+        92,
+        233,
+        308,
+        325
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        75,
+        244,
+        335,
+        363
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        81,
+        95,
+        252,
+        293,
+        343
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        83,
+        262,
+        283,
+        353
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        87,
+        318
+      ],
+      "name": "beta",
+      "type": "double"
+    }
+  ]
+}

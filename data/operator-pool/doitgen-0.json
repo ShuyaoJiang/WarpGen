@@ -1,0 +1,52 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j, k;\n\n  for (i = 0; i < nr; i++)\n    for (j = 0; j < nq; j++)\n      for (k = 0; k < np; k++)\n#if !FMA_DISABLED\n\tA_StrictFP[i][j][k] =\n#endif\n\t       \tA[i][j][k] = ((DATA_TYPE) i*j + k) / np;\n  for (i = 0; i < np; i++)\n    for (j = 0; j < np; j++)\n      C4[i][j] = ((DATA_TYPE) i*j) / np;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        65
+      ],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [
+        94
+      ],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [
+        125,
+        228,
+        250,
+        279,
+        325
+      ],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        153
+      ],
+      "name": "A_StrictFP",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        191
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        294
+      ],
+      "name": "C4",
+      "type": "double (*)[128]"
+    }
+  ]
+}

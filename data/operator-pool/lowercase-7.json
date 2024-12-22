@@ -1,0 +1,44 @@
+{
+  "code": "for (i = 0; i < 10000000; i++)\n#endif\n    lower_StringImpl(testData, numberOfCharacters, result);\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        26
+      ],
+      "name": "i",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        42
+      ],
+      "name": "lower_StringImpl",
+      "type": "size_t (const unsigned short *__restrict, size_t, unsigned short *__restrict)"
+    },
+    {
+      "locations": [
+        59
+      ],
+      "name": "testData",
+      "type": "unsigned short *"
+    },
+    {
+      "locations": [
+        69
+      ],
+      "name": "numberOfCharacters",
+      "type": "const size_t"
+    },
+    {
+      "locations": [
+        89
+      ],
+      "name": "result",
+      "type": "unsigned short *"
+    }
+  ]
+}

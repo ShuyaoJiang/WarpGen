@@ -1,0 +1,71 @@
+{
+  "code": "for (j = 0; j < _PB_NJ; j++)\n      {\n\tE[i][j] = 0;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  E[i][j] += A[i][k] * B[k][j];\n      }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        43,
+        89,
+        110
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        57,
+        64,
+        78,
+        100,
+        107
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        84
+      ],
+      "name": "E",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        40,
+        86,
+        97
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        95
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        105
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "code": "{\n#pragma STDC FP_CONTRACT OFF\n  int i, j, k;\n\n  /*    C := alpha*A*B' + alpha*B*A' + beta*C */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NI; j++)\n      C[i][j] *= beta;\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NI; j++)\n      for (k = 0; k < _PB_NJ; k++)\n\t{\n\t  C[i][j] += alpha * A[i][k] * B[j][k];\n\t  C[i][j] += alpha * B[i][k] * A[j][k];\n\t}\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [
+        55,
+        91,
+        166,
+        288,
+        329
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        86,
+        177
+      ],
+      "name": "beta",
+      "type": "double"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        60,
+        73,
+        299,
+        340
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        66,
+        81,
+        307,
+        358
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        68,
+        79,
+        317,
+        348
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

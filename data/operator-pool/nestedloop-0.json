@@ -1,0 +1,20 @@
+{
+  "code": "{\n#ifdef SMALL_PROBLEM_SIZE\n#define LENGTH 30\n#else\n#define LENGTH 46\n#endif\n    int n = ((argc == 2) ? atoi(argv[1]) : LENGTH);\n    int a, b, c, d, e, f, x=0;\n\t\n    for (a=0; a<n; a++)\n\tfor (b=0; b<n; b++)\n\t    for (c=0; c<n; c++)\n\t\tfor (d=0; d<n; d++)\n\t\t    for (e=0; e<n; e++)\n\t\t\tfor (f=0; f<n; f++)\n\t\t\t    x++;\n\n    printf(\"%d\\n\", x);\n    return(0);\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        91
+      ],
+      "name": "argc",
+      "type": "int"
+    },
+    {
+      "locations": [
+        109
+      ],
+      "name": "argv",
+      "type": "char **"
+    }
+  ]
+}

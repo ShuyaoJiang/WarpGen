@@ -1,0 +1,47 @@
+{
+  "code": "for (i = 0; i < testDataLength; i += staticDataLength)\n    memcpy(testData + i, staticData, staticDataLength * sizeof(staticData[0]));\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        32,
+        77
+      ],
+      "name": "i",
+      "type": "size_t"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        16
+      ],
+      "name": "testDataLength",
+      "type": "const size_t"
+    },
+    {
+      "locations": [
+        37,
+        92
+      ],
+      "name": "staticDataLength",
+      "type": "const size_t"
+    },
+    {
+      "locations": [
+        66
+      ],
+      "name": "testData",
+      "type": "unsigned short *"
+    },
+    {
+      "locations": [
+        80,
+        118
+      ],
+      "name": "staticData",
+      "type": "unsigned short[16]"
+    }
+  ]
+}

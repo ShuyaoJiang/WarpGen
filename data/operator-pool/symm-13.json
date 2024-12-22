@@ -1,0 +1,99 @@
+{
+  "code": "{\n\tacc = 0;\n\tfor (k = 0; k < j - 1; k++)\n\t  {\n\t    C[k][j] += alpha * A[k][i] * B[i][j];\n\t    acc += B[k][j] * A[k][i];\n\t  }\n\tC[i][j] = beta * C[i][j] + alpha * A[i][i] * B[i][j] + alpha * acc;\n      }",
+  "postContext": [
+    {
+      "locations": [
+        3,
+        94,
+        189
+      ],
+      "name": "acc",
+      "type": "double"
+    },
+    {
+      "locations": [
+        18,
+        25,
+        36,
+        53,
+        72,
+        103,
+        113
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        29,
+        56,
+        85,
+        106,
+        131,
+        148,
+        176
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        51,
+        126,
+        143
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        62,
+        153,
+        181
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        70,
+        111,
+        161
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        75,
+        82,
+        116,
+        128,
+        145,
+        163,
+        166,
+        173
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        80,
+        101,
+        171
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        136
+      ],
+      "name": "beta",
+      "type": "double"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "code": "{\n\n#ifdef ROPT\n   register double s,u,v,w,x;\n#else\n   double s,u,v,w,x;\n#endif\n\n   long loops, NLimit;\n   register long i, m, n;\n\n   printf(\"\\n\");\n   printf(\"   FLOPS C Program (Double Precision), V2.0 18 Dec 1992\\n\\n\");\n\n\t\t\t/****************************/\n   loops = 15625;        /* Initial number of loops. */\n\t\t\t/*     DO NOT CHANGE!       */\n\t\t\t/****************************/\n\n/****************************************************/\n/* Set Variable Values.                             */\n/* T[1] references all timing results relative to   */\n/* one million loops.                               */\n/*                                                  */\n/* The program will execute from 31250 to 512000000 */\n/* loops based on a runtime of Module 1 of at least */\n/* TLimit = 15.0 seconds. That is, a runtime of 15  */\n/* seconds for Module 1 is used to determine the    */\n/* number of loops to execute.                      */\n/*                                                  */\n/* No more than NLimit = 512000000 loops are allowed*/\n/****************************************************/\n\n   TLimit = 1.0;\n   NLimit = 512000000;\n\n   piref = 3.14159265358979324;\n   one   = 1.0;\n   two   = 2.0;\n   three = 3.0;\n   four  = 4.0;\n   five  = 5.0;\n   scale = one;\n\n   printf(\"   Module     Error        RunTime      MFLOPS\\n\");\n   printf(\"                            (usec)\\n\");\n/*************************/\n/* Initialize the timer. */\n/*************************/\n#ifdef SMALL_PROBLEM_SIZE\n   m = loops*200;\n#else\n   m = loops*10000;\n#endif\n\n\n\n/************************************************************/\n/* Module 8.  Calculate Integral of sin(x)*cos(x)*cos(x)    */\n/*            from 0 to PI/3 using the Trapazoidal Method.  */\n/*            Result is (1-cos(PI/3)^3)/3. There are 30     */\n/*            double precision operations per loop included */\n/*            in the timing:                                */\n/*               13 +,     0 -,    17 *          0 /        */\n/*            46.7% +, 00.0% -, 53.3% *, and 00.0% /        */\n/************************************************************/\n\n   x = piref / ( three * (double)m );              /*********************/\n   s = 0.0;                                        /*  Loop 9.          */\n   v = 0.0;                                        /*********************/\n\n   for( i = 1 ; i <= m-1 ; i++ )\n   {\n   u = (double)i * x;\n   w = u * u;\n   v = w*(w*(w*(w*(w*(B6*w+B5)+B4)+B3)+B2)+B1)+one;\n   s = s + v*v*u*((((((A6*w+A5)*w+A4)*w+A3)*w+A2)*w+A1)*w+one);\n   }\n\n   u  = piref / three;\n   w  = u * u;\n   sa = u*((((((A6*w+A5)*w+A4)*w+A3)*w+A2)*w+A1)*w+one);\n   sb = w*(w*(w*(w*(w*(B6*w+B5)+B4)+B3)+B2)+B1)+one;\n   sa = sa * sb * sb;\n\n   sa = x * ( sa + two * s ) / two;                  /* Module 8 Result */\n   sb = 0.29166666666666667;                         /*******************/\n   sc = sa - sb;\n\t\t\t\t\t\t  /*********************/\n\t\t\t\t\t\t  /*   DO NOT REMOVE   */\n\t\t\t\t\t\t  /*   THIS PRINTOUT!  */\n\t\t\t\t\t\t  /*********************/\n   printf(\"     8   %13.4lf  %10.4lf  %10.4lf\\n\",\n          sc* /* stabilize output */  1e-30,\n          0* /* stabilize output */ 1e-30 ,\n          0* /* stabilize output */ 1e-30 );\n\n   return 0;\n}",
+  "postContext": [
+    {
+      "locations": [
+        769,
+        1100
+      ],
+      "name": "TLimit",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1141,
+        2120,
+        2543
+      ],
+      "name": "piref",
+      "type": "double"
+    },
+    {
+      "locations": [
+        549,
+        1173,
+        1261,
+        2460,
+        2523,
+        2624,
+        2678
+      ],
+      "name": "one",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1189,
+        2725,
+        2737
+      ],
+      "name": "two",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1205,
+        2130,
+        2551
+      ],
+      "name": "three",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1221
+      ],
+      "name": "four",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1237
+      ],
+      "name": "five",
+      "type": "double"
+    },
+    {
+      "locations": [
+        1253
+      ],
+      "name": "scale",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2576,
+        2686,
+        2691,
+        2709,
+        2720,
+        2864
+      ],
+      "name": "sa",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2633,
+        2696,
+        2701,
+        2784,
+        2869
+      ],
+      "name": "sb",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2859,
+        3061
+      ],
+      "name": "sc",
+      "type": "double"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [
+        2435,
+        2653
+      ],
+      "name": "B6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2440,
+        2658
+      ],
+      "name": "B5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2444,
+        2662
+      ],
+      "name": "B4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2448,
+        2666
+      ],
+      "name": "B3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2452,
+        2670
+      ],
+      "name": "B2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2456,
+        2674
+      ],
+      "name": "B1",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2488,
+        2589
+      ],
+      "name": "A6",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2493,
+        2594
+      ],
+      "name": "A5",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2499,
+        2600
+      ],
+      "name": "A4",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2505,
+        2606
+      ],
+      "name": "A3",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2511,
+        2612
+      ],
+      "name": "A2",
+      "type": "double"
+    },
+    {
+      "locations": [
+        2517,
+        2618
+      ],
+      "name": "A1",
+      "type": "double"
+    }
+  ]
+}

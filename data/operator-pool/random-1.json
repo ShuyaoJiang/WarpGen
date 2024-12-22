@@ -1,0 +1,20 @@
+{
+  "code": "{\n#ifdef SMALL_PROBLEM_SIZE\n#define LENGTH 40000000\n#else\n#define LENGTH 400000000\n#endif\n  int N = ((argc == 2) ? atoi(argv[1]) : LENGTH) - 1;\n    \n  while (N--) {\n    gen_random(100.0);\n  }\n  printf(\"%.9f\\n\", gen_random(100.0));\n  return(0);\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        102
+      ],
+      "name": "argc",
+      "type": "int"
+    },
+    {
+      "locations": [
+        120
+      ],
+      "name": "argv",
+      "type": "char **"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "code": "for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\tacc = 0;\n\tfor (k = 0; k < j - 1; k++)\n\t  {\n\t    C[k][j] += alpha * A[k][i] * B[i][j];\n\t    acc += B[k][j] * A[k][i];\n\t  }\n\tC[i][j] = beta * C[i][j] + alpha * A[i][i] * B[i][j] + alpha * acc;\n      }",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        24,
+        143,
+        150,
+        184,
+        196,
+        213,
+        231,
+        234,
+        241
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        38,
+        45,
+        57,
+        97,
+        124,
+        153,
+        174,
+        199,
+        216,
+        244
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        71,
+        162,
+        257
+      ],
+      "name": "acc",
+      "type": "double"
+    },
+    {
+      "locations": [
+        86,
+        93,
+        104,
+        121,
+        140,
+        171,
+        181
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        119,
+        194,
+        211
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        130,
+        221,
+        249
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        138,
+        179,
+        229
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        148,
+        169,
+        239
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        204
+      ],
+      "name": "beta",
+      "type": "double"
+    }
+  ]
+}

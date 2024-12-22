@@ -1,0 +1,63 @@
+{
+  "code": "{\n  int i, j, k;\n\n#pragma scop\n  /* C := alpha*A*B + beta*C */\n  for (i = 0; i < _PB_NI; i++)\n    for (j = 0; j < _PB_NJ; j++)\n      {\n\tC[i][j] *= beta;\n\tfor (k = 0; k < _PB_NK; ++k)\n\t  C[i][j] += alpha * A[i][k] * B[k][j];\n      }\n#pragma endscop\n\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "ni",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        36,
+        58,
+        136,
+        186
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        53,
+        147
+      ],
+      "name": "beta",
+      "type": "double"
+    },
+    {
+      "locations": [],
+      "name": "nk",
+      "type": "int"
+    },
+    {
+      "locations": [
+        41,
+        197
+      ],
+      "name": "alpha",
+      "type": "double"
+    },
+    {
+      "locations": [
+        47,
+        205
+      ],
+      "name": "A",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        49,
+        215
+      ],
+      "name": "B",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

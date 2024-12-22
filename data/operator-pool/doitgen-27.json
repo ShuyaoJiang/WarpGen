@@ -1,0 +1,37 @@
+{
+  "code": "{\n  double AbsTolerance = FP_ABSTOLERANCE;\n  int r, q, p, s;\n\n  for (r = 0; r < _PB_NR; r++)\n    for (q = 0; q < _PB_NQ; q++)\n      for (p = 0; p < _PB_NP; p++) {\n        double V1 = A[r][q][p];\n        double V2 = B[r][q][p];\n        double Diff = fabs(V1 - V2);\n        if (Diff > AbsTolerance) {\n          fprintf(stderr, \"A[%d][%d][%d] = %lf and B[%d][%d][%d] = %lf differ more than\"\n                  \" FP_ABSTOLERANCE = %lf\\n\", r, q, p, V1, r, q, p, V2, AbsTolerance);\n          return 0;\n        }\n      }\n\n  return 1;\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nr",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "nq",
+      "type": "int"
+    },
+    {
+      "locations": [],
+      "name": "np",
+      "type": "int"
+    },
+    {
+      "locations": [
+        183,
+        326
+      ],
+      "name": "A",
+      "type": "double (*)[128][128]"
+    },
+    {
+      "locations": [
+        215,
+        350
+      ],
+      "name": "B",
+      "type": "double (*)[128][128]"
+    }
+  ]
+}

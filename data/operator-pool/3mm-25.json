@@ -1,0 +1,60 @@
+{
+  "code": "for (k = 0; k < _PB_NJ; ++k)\n\t  G[i][j] += E[i][k] * F[k][j];\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        26,
+        48,
+        55
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        32
+      ],
+      "name": "G",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        34,
+        45
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        37,
+        58
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        43
+      ],
+      "name": "E",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        53
+      ],
+      "name": "F",
+      "type": "double (*)[1024]"
+    }
+  ]
+}

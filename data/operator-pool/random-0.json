@@ -1,0 +1,13 @@
+{
+  "code": "{\n  static long last = 42;\n    \n  last = (last * IA + IC) % IM;\n  return( max * last / IM );\n}",
+  "postContext": [],
+  "preContext": [
+    {
+      "locations": [
+        74
+      ],
+      "name": "max",
+      "type": "double"
+    }
+  ]
+}

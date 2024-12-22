@@ -1,0 +1,60 @@
+{
+  "code": "for (k = 0; k < _PB_NJ; ++k)\n\t  D[i][j] += tmp[i][k] * C[k][j];\n",
+  "postContext": [
+    {
+      "locations": [
+        5,
+        12,
+        26,
+        50,
+        57
+      ],
+      "name": "k",
+      "type": "int"
+    }
+  ],
+  "preContext": [
+    {
+      "locations": [],
+      "name": "nj",
+      "type": "int"
+    },
+    {
+      "locations": [
+        32
+      ],
+      "name": "D",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        34,
+        47
+      ],
+      "name": "i",
+      "type": "int"
+    },
+    {
+      "locations": [
+        37,
+        60
+      ],
+      "name": "j",
+      "type": "int"
+    },
+    {
+      "locations": [
+        43
+      ],
+      "name": "tmp",
+      "type": "double (*)[1024]"
+    },
+    {
+      "locations": [
+        55
+      ],
+      "name": "C",
+      "type": "double (*)[1024]"
+    }
+  ]
+}
